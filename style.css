@@ -1,0 +1,96 @@
+:root {
+    --bg-color: #fdfaf6;
+    --text-color: #332c28;
+    --accent-color: #6f4e37; /* Coffee Brown */
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #fdfaf6;
+    --card-bg: #2d2d2d;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: white;
+}
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    right: -300px; /* Start hidden */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: var(--bg-color);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0; /* Slide in */
+}
+
+#cart-items-list {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-count {
+    cursor: pointer;
+    background: #6f4e37;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
